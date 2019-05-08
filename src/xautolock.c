@@ -165,6 +165,14 @@ main (int argc, char* argv[])
       if ((unsigned long) t1 - (unsigned long) t0 > 3) resetLockTrigger ();
       t0 = t1;
     }
+
+    if (lockAfterSleep)
+    {
+      t1 = time (NULL);
+      if ((unsigned long) t1 - (unsigned long) t0 > 3) lockNow = True;
+      t0 = t1;
+    }
+
   }
 
   return 0; /* Never reached! */

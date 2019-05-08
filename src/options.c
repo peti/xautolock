@@ -52,6 +52,7 @@ message      messageToSend = msg_none;   /* message to send to an
 Bool         detectSleep = False;        /* whether to reset the timers
 					    after a (laptop) sleep, 
 					    i.e. after a big time jump  */
+Bool         lockAfterSleep = False;
 
 #ifdef VMS
 struct dsc$descriptor lockerDescr;       /* used to fire up the locker  */
@@ -231,6 +232,7 @@ BOOL_ACTION (resetSaver)
 BOOL_ACTION (noCloseOut)
 BOOL_ACTION (noCloseErr)
 BOOL_ACTION (detectSleep)
+BOOL_ACTION (lockAfterSleep)
 
 static Bool
 noCloseAction (Display* d, const char* arg)
@@ -545,6 +547,8 @@ static struct
     noCloseErrAction   , (optChecker) 0            },
   {"detectsleep"       , XrmoptionNoArg , (caddr_t) "",
     detectSleepAction  , (optChecker) 0            },
+  {"lockaftersleep"    , XrmoptionNoArg , (caddr_t) "",
+    lockAfterSleepAction     , (optChecker) 0            },
 }; /* as it says, the order is important! */
 
 /*
@@ -576,7 +580,7 @@ usage (int exitCode)
   error1 ("%s[-nocloseout][-nocloseerr][-noclose]\n", blanks);
   error1 ("%s[-enable][-disable][-toggle][-exit][-secure]\n", blanks);
   error1 ("%s[-locknow][-unlocknow][-nowlocker locker]\n", blanks);
-  error1 ("%s[-restart][-resetsaver][-detectsleep]\n", blanks);
+  error1 ("%s[-restart][-resetsaver][-detectsleep][-lockaftersleep]\n", blanks);
 
   error0 ("\n");
   error0 (" -help               : print this message and exit.\n");
@@ -612,6 +616,7 @@ usage (int exitCode)
   error0 (" -resetsaver         : reset the screensaver when starting "
                                   "the locker.\n");
   error0 (" -detectsleep        : reset timers when awaking from sleep.\n");
+  error0 (" -lockaftersleep     : lock immediately after waking up from sleep.\n");
 
   error0 ("\n");
   error0 ("Defaults :\n");

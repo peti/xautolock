@@ -23,7 +23,7 @@ This man page applies to xautolock version 2.2.
 [\fB\-nocloseout\fR] [\fB\-nocloseerr\fR] [\fB\-noclose\fR]
 [\fB\-disable\fR] [\fB\-enable\fR] [\fB\-toggle\fR] [\fB\-exit\fR]
 [\fB\-locknow\fR] [\fB\-unlocknow\fR] [\fB\-nowlocker\fR \fIlocker\fR]
-[\fB\-restart\fR] [\fB\-detectsleep\fR]
+[\fB\-restart\fR] [\fB\-detectsleep\fR] [\fB-lockaftersleep\fR]
 
 .SH DESCRIPTION 
 Xautolock monitors the user activity on an X Window display. If none is
@@ -213,6 +213,9 @@ When this occurs, the lock timer is reset and locker program is not
 launched even if primary timeout has been reached. This option is 
 typically used to avoid locker program to be launched when awaking a 
 laptop computer.
+.TP
+\fB\-lockaftersleep\fR
++Lock immediately after awakening from sleep.
 .TP 
 \fB\-secure\fR
 Instructs xautolock to run in secure mode. In this mode, xautolock
