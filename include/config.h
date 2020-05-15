@@ -78,12 +78,12 @@
 #define MIN_LOCK_MINS     1           /* minimum number of minutes
                                          before firing up the locker       */
 #define LOCK_MINS         10          /* default ...                       */
-#define MAX_LOCK_MINS     60          /* maximum ...                       */
+#define MAX_LOCK_MINS     1440        /* maximum ...                       */
 
 #define MIN_KILL_MINS     10          /* minimum number of minutes
                                          before firing up the killer       */
 #define KILL_MINS         20          /* default ...                       */
-#define MAX_KILL_MINS     120         /* maximum ...                       */
+#define MAX_KILL_MINS     1440        /* maximum ...                       */
 
 #define CREATION_DELAY    30          /* should be > 10 and
                                          < min(45,(MIN_LOCK_MINS*30))      */
