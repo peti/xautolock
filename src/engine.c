@@ -23,6 +23,9 @@
 #include "state.h"
 #include "miscutil.h"
 
+#include <X11/Xmd.h>
+#include <X11/extensions/dpmsconst.h>
+
 /*
  *  Function for querying the idle time from the server.
  *  Only used if either the Xidle or the Xscreensaver
