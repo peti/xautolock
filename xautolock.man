@@ -130,7 +130,7 @@ Print the version number and exit.
 .TP 
 \fB\-time\fR
 Specifies the primary timeout interval. The default is 10 minutes,
-the minimum is 1 minute, and the maximum is 1 hour.
+the minimum is 1 minute, and the maximum is 24 hours.
 .TP 
 \fB\-locker\fR
 Specifies the \fIlocker\fR to be used. The default is xlock. Notice that if
@@ -145,7 +145,7 @@ Specifies the secondary timeout in minutes after starting the \fIlocker\fR.
 This timer is only active as long as the \fIlocker\fR is running, and is 
 reset each time user activity is detected. If it expires before the 
 \fIlocker\fR exits, the \fIkiller\fR command is run. The default is
-20 minutes, the minimum is 10 minutes, and the maximum is 2 hours.
+20 minutes, the minimum is 10 minutes, and the maximum is 24 hours.
 This option is only useful in conjunction with \fB\-killer\fR.
 .TP 
 \fB\-killer\fR
